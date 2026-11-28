@@ -1,4 +1,4 @@
-const C='bm-mwzntqba',F='bm-fonts',FILES=['./','manifest.webmanifest','icon-180.png','icon-192.png','icon-512.png'];
+const C='bm-mwznvc72',F='bm-fonts',FILES=['./','manifest.webmanifest','icon-180.png','icon-192.png','icon-512.png'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(FILES)));});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C&&k!==F).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;const u=e.request.url;
